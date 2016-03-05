@@ -29,12 +29,12 @@ public:
 	}
 
 	bool leerPolinomio(){
-		cin>>this->grado;
+		cin>>grado;
 		if(!cin) return false;
 		for(int i=0; i<=grado; i++){
 		 int c;
 		 cin>>c;
-		 this->coef.push_back(c);
+		 coef.push_back(c);
 	 	}
 		return true;
 	}

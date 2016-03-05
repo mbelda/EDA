@@ -57,11 +57,7 @@ public:
 		if (h == h2.h && min == h2.min && sec == h2.sec) return true;
 		return false;
 	}
-	/*
-	bool operator !=  (const Horas & h2) const {
-		return !(*this == h2);
-	}
-	*/
+
 	bool operator < (const Horas & h2) const {
 		if (h < h2.h) { return true; }
 		else if (h == h2.h) {
@@ -72,19 +68,7 @@ public:
 		}
 		return false;
 	}
-	/*
-	bool operator > (const Horas & h2) const {
-		return !(*this < h2) && *this != h2;
-	}
-
-	bool operator >= (Horas h2) const {
-		return !(*this < h2);
-	}
-
-	bool operator <= (Horas h2) const {
-		return !(*this > h2);
-	}
-	*/
+	
 	friend istream& operator >> (istream & is, Horas & hora);
 	friend ostream& operator << (ostream & os, const Horas & hora);
 
@@ -128,25 +112,7 @@ public:
 		}
 		return false;
 	}
-	/*
-	bool operator <= (const Pelicula & p2) const {
-		return !(*this < p2);
-	}
-
-	bool operator > (const Pelicula & p2) const {
-		return !(*this <= p2);
-	}
-	bool operator >= (const Pelicula & p2) const {
-		return !(*this < p2);
-	}
-
-	bool operator != (const Pelicula & p2) const { return !(*this == p2); }
-
-	bool operator == (const Pelicula & p2) const {
-		if (finaliza == p2.finaliza && titulo == p2.titulo)return true;
-		return false;
-	}
-	*/
+	
 	friend istream& operator >> (istream & is, Pelicula & peli);
 	friend ostream& operator << (ostream & os, const Pelicula & peli);
 
@@ -169,10 +135,6 @@ ostream& operator << (ostream & os, const Pelicula & peli) {
 	return os;
 }
 
-void resuelve(vector<Pelicula> pelis) {
-	sort(pelis.begin(), pelis.end());
-}
-
 
 void resuelveDato(int npelis) {
 	vector<Pelicula> pelis;
@@ -188,7 +150,7 @@ void resuelveDato(int npelis) {
 	}
 
 	//Procesamos las peliculas
-	resuelve(pelis);
+	sort(pelis.begin(), pelis.end());
 
 	//Mostramos la solución
 	for (int i = 0; i < pelis.size(); i++) {

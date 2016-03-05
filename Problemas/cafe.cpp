@@ -34,7 +34,7 @@ public:
 		//Vemos si los minutos suman horas
 		hAux += minAux / 60;
 		minAux = minAux % 60;
-		
+
 		if (hAux <= 23 && minAux <= 59 && secAux <= 59) {
 			h = hAux;
 			min = minAux;
@@ -83,28 +83,10 @@ public:
 	}
 
 	Horas operator - (const Horas & h2) const {
-		Horas resta;
-		int hAux = h - h2.h;
-		int minAux = min - h2.min;
 
-		if (minAux < 0) {
-			hAux -= 1;
-			minAux += 60;
-		}
-
-		int secAux = sec - h2.sec;
-
-		if (secAux < 0) {
-			minAux -= 1;
-			secAux += 60;
-		}
-
-		if (hAux >=0 && minAux >= 0 && secAux >= 0) {
-			resta.h = hAux;
-			resta.min = minAux;
-			resta.sec = secAux;
-			return resta;
-		}
+		int hora1 = numSegundos(), hora2 = h2.numSegundos();
+		int resta = hora1 - hora2;
+		if (resta >= 0)return Horas(resta);
 		else { throw invalid_argument("ERROR"); }
 
 	}
@@ -113,11 +95,7 @@ public:
 		if (h == h2.h && min == h2.min && sec == h2.sec) return true;
 		return false;
 	}
-	/*
-	bool operator !=  (const Horas & h2) const {
-	return !(*this == h2);
-	}
-	*/
+
 	bool operator < (const Horas & h2) const {
 		if (h < h2.h) { return true; }
 		else if (h == h2.h) {
@@ -128,19 +106,7 @@ public:
 		}
 		return false;
 	}
-	/*
-	bool operator > (const Horas & h2) const {
-	return !(*this < h2) && *this != h2;
-	}
 
-	bool operator >= (Horas h2) const {
-	return !(*this < h2);
-	}
-
-	bool operator <= (Horas h2) const {
-	return !(*this > h2);
-	}
-	*/
 	friend istream& operator >> (istream & is, Horas & hora);
 	friend ostream& operator << (ostream & os, const Horas & hora);
 
@@ -182,22 +148,22 @@ bool resuelveDato() {
 			}
 			catch (invalid_argument e) {}
 		}
-		
+
 		//Resolvemos y mostramos la solucion
 		sort(v.begin(), v.end());
 
 		int indice = 0;
-		Horas tiempo = Horas(0,0,0);
+		Horas tiempo = Horas(0, 0, 0);
 
-		for (int i = 0; i < v.size()-1; i++) {
+		for (int i = 0; i < v.size() - 1; i++) {
 			if (tiempo < v[i + 1] - v[i]) {
 				tiempo = v[i + 1] - v[i];
 				indice = i;
 			}
 		}
 
-		cout << v[indice] << " " << tiempo;
-	
+		cout << v[indice] << " " << tiempo << endl;
+
 		return true;
 	}
 }

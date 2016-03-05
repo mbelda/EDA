@@ -85,7 +85,7 @@ istream& operator >> (istream & is, Horas & hora)
 	char ch;
 	int h, min, sec;
 
-	is >>h >> ch >> min >> ch >> sec;
+	is >> h >> ch >> min >> ch >> sec;
 	try {
 		hora = Horas(h, min, sec);
 	}
@@ -105,7 +105,7 @@ ostream& operator << (ostream & os, Horas hora) {
 
 int buscarOMayor(vector<Horas> tren, int ini, int fin, Horas dato) {
 	if (tren[fin] < dato) { return -1; }
-	
+
 	int mitad, iteraciones = 0;
 	while ((ini <= fin)) {
 		mitad = (ini + fin) / 2;
@@ -121,7 +121,7 @@ int buscarOMayor(vector<Horas> tren, int ini, int fin, Horas dato) {
 void procesa(vector<Horas> tren, int ntren, Horas consulta) {
 
 	int pos = buscarOMayor(tren, 0, ntren - 1, consulta);
-	if(pos!=-1){
+	if (pos != -1) {
 		cout << tren[pos] << endl;
 	}
 	else { cout << "NO" << endl; }
@@ -141,7 +141,7 @@ int main() {
 		for (int i = 0; i < ntrenes; i++) {
 			Horas j;
 			cin >> j;
-			tren.push_back(j); 
+			tren.push_back(j);
 		}
 
 		//Procesamos las consultas
@@ -152,7 +152,7 @@ int main() {
 				procesa(tren, ntrenes, consulta);
 			}
 			catch (invalid_argument e) {
-				cout <<e.what() << endl;
+				cout << e.what() << endl;
 			}
 		}
 		cout << "---" << endl;
