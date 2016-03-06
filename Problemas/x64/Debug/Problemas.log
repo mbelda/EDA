@@ -1,11 +1,3 @@
-﻿  lista.cpp
-c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(80): error C2064: el término no se evalúa como una función con 1 argumentos
-  c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(78): note: durante la compilación de la función miembro de plantilla de clase 'void SinglyLinkedList<int>::mostrar(void)'
-  c:\users\majo belda\desktop\eda\problemas\lista.cpp(15): note: vea la referencia a la creación de instancias de plantilla de función 'void SinglyLinkedList<int>::mostrar(void)' que se está compilando
-  c:\users\majo belda\desktop\eda\problemas\lista.cpp(6): note: vea la referencia a la creación de instancias de plantilla de clase 'SinglyLinkedList<int>' que se está compilando
-c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(80): error C2228: el operando izquierdo de '._elem' debe tener class/struct/union
-c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(81): error C2228: el operando izquierdo de '.size' debe tener class/struct/union
-  c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(81): note: el tipo es 'SinglyLinkedList<int> *const '
-  c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(81): note: ¿deseaba utilizar '->' en su lugar?
-c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(82): error C2064: el término no se evalúa como una función con 1 argumentos
-c:\users\majo belda\desktop\eda\problemas\singlylinkedlist.h(82): error C2227: el operando izquierdo de '->_elem' debe señalar al tipo class/struct/union/generic
+﻿  lista2.cpp
+  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.exe
+  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.pdb (Partial PDB)

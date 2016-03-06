@@ -3,10 +3,57 @@
 
 #include <iostream>
 #include <stdexcept>
+using namespace std;
 
 
 template <class T>
 class SinglyLinkedList {
+
+	/**
+	Clase nodo que almacena internamente el elemento (de tipo T),
+	y un puntero al nodo siguiente.
+	*/
+	class Nodo {
+	public:
+		T _elem;
+		Nodo *_sig;
+
+		Nodo() : _sig(nullptr) {}
+		Nodo(const T &elem) : _elem(elem), _sig(nullptr) {}
+		Nodo(const T &elem, Nodo *sig) :
+			_elem(elem), _sig(sig) {}
+	
+	};
+
+	// Puntero al primer elemento
+	Nodo *_ini;
+
+	// libera todos los nodos de la lista
+	void libera(Nodo *ini) {
+		while (ini != nullptr) {
+			Nodo *aux = ini;
+			ini = ini->_sig;
+			delete aux;
+		}
+	}
+
+	// Copia el parámetro en la lista.
+	// La lista debe estar vacia.
+	Nodo* copia(Nodo* other) {
+		if (other == nullptr) return nullptr;
+		else if (other->_sig == nullptr) {
+			Nodo* nuevo = new Nodo(other->_elem);
+			return nuevo;
+		}
+		else {
+			Nodo* aux = copia(other->_sig);
+			Nodo* nuevo = new Nodo(other->_elem, aux);
+			aux = nuevo;
+			return aux;
+		}
+	}
+
+
 public:
 	// Constructor sin parámetros
 	SinglyLinkedList() : _ini(nullptr) {}
@@ -56,58 +103,49 @@ public:
 		delete aux;
 	}
 
+	void invertir() {
+		Nodo * aux;
+		Nodo * resultado = nullptr;
+
+		while (_ini != nullptr) {
+			aux = _ini;
+			_ini = _ini->_sig;
+			aux->_sig = resultado;
+			resultado = aux;
+		}
+
+		_ini = resultado;
+	}
+
 	void duplicate() {
-	
+		Nodo * copia = _ini;
+		_ini = nullptr;
+		while (copia != nullptr) {
+			for (int i = 0; i < 2; i++) {
+				push_front(copia->_elem);
+			}
+			copia = copia->_sig;
+		}
+		
+		invertir();
 	}
 
 	void mostrar() {
-		
+		Nodo* aux = _ini;
+		if (_ini != nullptr) {
+			cout << _ini->_elem;
+			_ini = _ini->_sig;
+			while (_ini != nullptr) {
+				cout <<" " << _ini->_elem;
+				_ini = _ini->_sig;
+			}
+			_ini = aux;
+		}
 	}
 
 private:
 
-	/**
-	Clase nodo que almacena internamente el elemento (de tipo T),
-	y un puntero al nodo siguiente.
-	*/
-	class Nodo {
-	public:
-		Nodo() : _sig(nullptr) {}
-		Nodo(const T &elem) : _elem(elem), _sig(nullptr) {}
-		Nodo(const T &elem, Nodo *sig) :
-			_elem(elem), _sig(sig) {}
-
-		T _elem;
-		Nodo *_sig;
-	};
-
-	// Puntero al primer elemento
-	Nodo *_ini;
-
-	// libera todos los nodos de la lista
-	void libera(Nodo *ini) {
-		while (ini != nullptr) {
-			Nodo *aux = ini;
-			ini = ini->_sig;
-			delete aux;
-		}
-	}
-
-	// Copia el parámetro en la lista.
-	// La lista debe estar vacia.
-	Nodo* copia(Nodo* other) {
-		if (other == nullptr) return nullptr;
-		else if (other->_sig == nullptr) {
-			Nodo* nuevo = new Nodo(other->_elem);
-			return nuevo;
-		}
-		else {
-			Nodo* aux = copia(other->_sig);
-			Nodo* nuevo = new Nodo(other->_elem, aux);
-			aux = nuevo;
-			return aux;
-		}
-	}
+	
 
 };
 
