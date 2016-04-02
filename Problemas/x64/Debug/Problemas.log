@@ -1,3 +1,4 @@
-﻿  lista2.cpp
+﻿  luna.cpp
+c:\users\majo belda\desktop\eda\problemas\luna.cpp(27): warning C4101: 'espacio': variable local sin referencia
   Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.exe
   Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.pdb (Partial PDB)

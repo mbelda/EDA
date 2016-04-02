@@ -143,6 +143,22 @@ public:
 		}
 	}
 
+	void creciente() {
+		Nodo *auxAnt = _ini;
+		Nodo *aux = _ini->_sig;
+		while (aux != nullptr) {
+			if (aux->_elem < auxAnt->_elem) {
+				auxAnt->_sig = aux->_sig;
+				delete aux;
+				aux = auxAnt->_sig;
+			}
+			else {
+				auxAnt = aux;
+				aux = aux->_sig;
+			}
+		}
+	}
+
 private:
 
 	

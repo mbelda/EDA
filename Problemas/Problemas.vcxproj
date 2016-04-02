@@ -19,7 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="polinomio.cpp" />
+    <ClInclude Include="doubleLinkedList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="luna.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2B7F6EF8-383C-49D2-83D6-EDFD19B74DAC}</ProjectGuid>
