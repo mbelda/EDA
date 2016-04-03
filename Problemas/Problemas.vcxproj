@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="doubleLinkedList.h" />
+    <ClCompile Include="cartas.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="luna.cpp" />
+    <ClInclude Include="doubleLinkedList.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2B7F6EF8-383C-49D2-83D6-EDFD19B74DAC}</ProjectGuid>
