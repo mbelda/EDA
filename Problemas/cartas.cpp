@@ -45,34 +45,52 @@ bool jugar(vector<Carta> & A, vector<Carta> & B, vector<Carta> & C, vector<Carta
 	return false;
 }
 
-int resuelve(stack<Carta> & monton, int const & n) {
+bool resuelve(stack<Carta> & monton, int const & n, int & cont) {
 	vector<Carta> A, B, C, D;
 	stack<Carta> montonB;
 	Carta c, aux;
 	Carta ultSinMover = monton.top();
 	bool movidas = true;
-	int cont = 0;
-
-	//mientras tengamos suficientes cartas en el monton
-	while (monton.size() >= n) {
-		//sacar n cartas
-		for (int i = 0; i < n; i++) {
-			c = monton.top();
-			montonB.push(c);
-			monton.pop();
-		}
-
+    
+    while(movidas){
+        movidas=false;
+    	//mientras tengamos suficientes cartas en el monton
+    	while (monton.size() >= n) {
+    		//sacar n cartas
+    		for (int i = 0; i < n; i++) {
+    			c = monton.top();
+    			montonB.push(c);
+    			monton.pop();
+    		}
+    
+    		while (jugar(A, B, C, D, c, montonB)) {
+    		    movidas=true;
+    			c = montonB.top();
+    		}
+    		
+    	}
+    	//Si quedan menos de n cartas en el monton pero mas de 0 las sacas
+    	while(monton.size()>0){
+    	    c = monton.top();
+    		montonB.push(c);
+    		monton.pop();  
+    	}
+    	//juegas las caras que has sacado
 		while (jugar(A, B, C, D, c, montonB)) {
+		    movidas=true;
 			c = montonB.top();
 		}
-
-		if (!movidas && ultSinMover == montonB.top()) {
-			return cont;
-		}
 		
-	}
+		//pasas las cartas de B a A y vacias B
+		monton = montonB;
+		montonB = stack<Carta>();
+        
+        //se ha completado la vuelta
+        cont++;
+    }
 	
-
+    if(monton.size() > 0) return false;
+    else return true;
 
 }
 
@@ -91,11 +109,11 @@ void caso() {
 		c = Carta(num, ch);
 		monton.push(c);
 	}
+    
+	int cont = 0;
 
-	int n = resuelve(monton, nCartasSacar);
-
-	if (n < 0) { cout << "NO" << endl; }
-	else cout << "SI " << n << endl;
+	if (resuelve(monton, nCartasSacar, cont)) {cout << "SI " << cont << endl; }
+	else cout << "NO" << endl;
 
 }
 
