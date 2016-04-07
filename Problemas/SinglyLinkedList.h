@@ -159,6 +159,51 @@ public:
 		}
 	}
 
+	void saltos(int const & n) {
+		if (_ini != nullptr) {
+			Nodo *auxAnt = _ini;
+			Nodo *aux = _ini->_sig;
+			while (aux != nullptr) {
+				if (aux->_elem - auxAnt->_elem > n || auxAnt->_elem - aux->_elem > n) {
+					auxAnt->_sig = aux->_sig;
+					delete aux;
+					aux = auxAnt->_sig;
+				}
+				else {
+					auxAnt = aux;
+					aux = aux->_sig;
+				}
+			}
+		}
+
+	}
+
+
+	void invertirK(int const & k) {
+		Nodo * aux = _ini;
+		for (int i = 0; i < k - 1; i++) {
+			for (int j = 0; j < k - i - 1 && aux->_sig!= nullptr; j++) {
+				
+			}
+			aux = _ini;
+		}
+		
+	}
+
+	void mostrarFormatoK() {
+		cout << "{";
+		if (_ini != nullptr) {
+			cout << _ini->_elem;
+			_ini = _ini->_sig;
+			while (_ini != nullptr) {
+				cout << "," << _ini->_elem;
+				_ini = _ini->_sig;
+			}
+			_ini = aux;
+		}
+		cout << "}" << endl;
+	}
+
 private:
 
 	

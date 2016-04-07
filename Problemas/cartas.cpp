@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include "DoubleLinkedList.h"
 using namespace std;
 
 class Carta {
@@ -49,7 +48,6 @@ bool resuelve(stack<Carta> & monton, int const & n, int & cont) {
 	vector<Carta> A, B, C, D;
 	stack<Carta> montonB;
 	Carta c, aux;
-	Carta ultSinMover = monton.top();
 	bool movidas = true;
     
     while(movidas){
@@ -62,28 +60,38 @@ bool resuelve(stack<Carta> & monton, int const & n, int & cont) {
     			montonB.push(c);
     			monton.pop();
     		}
-    
-    		while (jugar(A, B, C, D, c, montonB)) {
-    		    movidas=true;
-    			c = montonB.top();
+			bool hayCartas = true;
+			while (jugar(A, B, C, D, c, montonB) && hayCartas) {
+				movidas = true;
+				if (!montonB.empty()) {
+					hayCartas = true;
+					c = montonB.top();
+				}
+				else { hayCartas = false; }
     		}
     		
     	}
     	//Si quedan menos de n cartas en el monton pero mas de 0 las sacas
-    	while(monton.size()>0){
+    	while(!monton.empty()){
     	    c = monton.top();
     		montonB.push(c);
     		monton.pop();  
     	}
+		bool hayCartas2 = true;
     	//juegas las caras que has sacado
-		while (jugar(A, B, C, D, c, montonB)) {
+		while (jugar(A, B, C, D, c, montonB) && hayCartas2) {
 		    movidas=true;
-			c = montonB.top();
+			if (!montonB.empty()) {
+				hayCartas2 = true;
+				c = montonB.top();
+			}
 		}
 		
-		//pasas las cartas de B a A y vacias B
-		monton = montonB;
-		montonB = stack<Carta>();
+		//pasas las cartas de B a A
+		while (!montonB.empty()) {
+			monton.push(montonB.top());
+			montonB.pop();
+		}
         
         //se ha completado la vuelta
         cont++;
@@ -112,7 +120,7 @@ void caso() {
     
 	int cont = 0;
 
-	if (resuelve(monton, nCartasSacar, cont)) {cout << "SI " << cont << endl; }
+	if (resuelve(monton, nCartasSacar, cont)) {cout << "SI " << cont-1 << endl; }
 	else cout << "NO" << endl;
 
 }

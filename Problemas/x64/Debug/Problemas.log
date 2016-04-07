@@ -1,4 +1,3 @@
-﻿  cartas.cpp
-c:\users\majo belda\desktop\eda\problemas\cartas.cpp(15): error C2976: 'DoubleLinkedList': no hay suficientes argumentos de plantilla
-  c:\users\majo belda\desktop\eda\problemas\doublelinkedlist.h(9): note: vea la declaración de 'DoubleLinkedList'
-c:\users\majo belda\desktop\eda\problemas\cartas.cpp(17): error C2143: error de sintaxis: falta ';' delante de 'for'
+﻿  saltos.cpp
+  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.exe
+  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.pdb (Partial PDB)
