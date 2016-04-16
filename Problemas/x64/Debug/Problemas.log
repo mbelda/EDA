@@ -1,3 +1,4 @@
-﻿  0817I.cpp
+﻿  0812M.cpp
+c:\users\majo belda\desktop\eda\problemas\0812m.cpp(9): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.exe
   Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.pdb (Partial PDB)
