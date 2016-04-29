@@ -14,31 +14,41 @@ Arbin<T> leerArbol(T const&	vacio)	{
 
 template <class T>
 void resuelve(Arbin<T> const & a, string & id, int & coste){
-	int costeAux1, costeAux2;
-	string idAux1, idAux2;
+	int coste1, coste2;
+	string id1, id2;
+	//a.raiz() no es tesoro y no es vacio, ese caso lo cubrimos antes
 	if (a.raiz() == "Dragon" || a.raiz() == "Via_libre"){
+		
 		if (a.raiz() == "Dragon") coste = 1;
 		else coste = 0;
-	
-		if (!a.hijoDr().esVacio()){
-			resuelve(a.hijoDr(), idAux1, costeAux1);
+
+		//Como el identificador es dragon o via libre, no pueden ser los dos hijos null
+		if (a.hijoDr().esVacio() ){
+			resuelve(a.hijoIz(), id1, coste1);
+			id = id1;
+			coste += coste1;
 		}
-		if (!a.hijoIz().esVacio()){
-			resuelve(a.hijoIz(), idAux2, costeAux2)
+		else if (a.hijoIz().esVacio()){
+			resuelve(a.hijoDr(), id2, coste2);
+			id = id2;
+			coste += coste2;
 		}
-		if (costeAux1 < costeAux2){
-			id = idAux1;
-			coste + = costeAux1;
-		}
-		else{
-			id = idAux2;
-			coste += costeAux2;
+		else {
+			resuelve(a.hijoIz(), id1, coste1);
+			resuelve(a.hijoDr(), id2, coste2);
+			if (coste1 <= coste2){
+				id = id1;
+				coste += coste1;
+			}
+			else {
+				id = id2;
+				coste += coste2;
+			}
 		}
 		return;
 	}
-	else{
-		//Es hoja
-		csote = 0;
+	else{ //Es hoja
+		coste = 0;
 		id = a.raiz();
 		return;
 	}	
@@ -60,7 +70,7 @@ void resuelve(Arbin<T> const & a){
 	else {
 		resuelve(a.hijoIz(), id1, coste1);
 		resuelve(a.hijoDr(), id2, coste2);
-		if (coste1 < coste2){ cout << id1 << " " << coste1 << endl; }
+		if (coste1 <= coste2){ cout << id1 << " " << coste1 << endl; }
 		else cout << id2 << " " << coste2 << endl;
 	}
 	
