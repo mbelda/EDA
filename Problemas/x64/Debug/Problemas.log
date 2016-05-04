@@ -1,8 +1,21 @@
-﻿Compilación iniciada a las 29/04/2016 15:01:17.
-     1>Proyecto "C:\hlocal\EDA\Problemas\Problemas.vcxproj" en el nodo 2 (Build destinos).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for v140 (Platform Toolset = 'v140') cannot be found. To build using the v140 build tools, please install v140 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
-     1>Compilación del proyecto terminada "C:\hlocal\EDA\Problemas\Problemas.vcxproj" (Build destinos) -- ERROR.
-
-ERROR al compilar.
-
-Tiempo transcurrido 00:00:00.00
+﻿  0906M.cpp
+c:\users\majo belda\desktop\eda\problemas\0906m.cpp(55): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
+c:\users\majo belda\desktop\eda\problemas\arbin.h(162): error C2039: 'push': no es un miembro de 'std::list<T,std::allocator<_Ty>>'
+          with
+          [
+              T=int,
+              _Ty=int
+          ]
+  c:\users\majo belda\desktop\eda\problemas\arbin.h(150): note: durante la compilación de la función miembro de plantilla de clase 'std::list<T,std::allocator<_Ty>> Arbin<T>::niveles(void) const'
+          with
+          [
+              T=int,
+              _Ty=int
+          ]
+  c:\users\majo belda\desktop\eda\problemas\0906m.cpp(56): note: vea la referencia a la creación de instancias de plantilla de función 'std::list<T,std::allocator<_Ty>> Arbin<T>::niveles(void) const' que se está compilando
+          with
+          [
+              T=int,
+              _Ty=int
+          ]
+  c:\users\majo belda\desktop\eda\problemas\0906m.cpp(55): note: vea la referencia a la creación de instancias de plantilla de clase 'Arbin<int>' que se está compilando
