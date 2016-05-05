@@ -159,7 +159,7 @@ public:
 		while (!porProcesar.empty()) {
 			Nodo *visita = porProcesar.front();
 			porProcesar.pop();
-			ret.push(visita->_elem);
+			ret.push_back(visita->_elem);
 			if (visita->_iz)
 				porProcesar.push(visita->_iz);
 			if (visita->_dr)

@@ -1,21 +1,4 @@
 ﻿  0906M.cpp
-c:\users\majo belda\desktop\eda\problemas\0906m.cpp(55): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
-c:\users\majo belda\desktop\eda\problemas\arbin.h(162): error C2039: 'push': no es un miembro de 'std::list<T,std::allocator<_Ty>>'
-          with
-          [
-              T=int,
-              _Ty=int
-          ]
-  c:\users\majo belda\desktop\eda\problemas\arbin.h(150): note: durante la compilación de la función miembro de plantilla de clase 'std::list<T,std::allocator<_Ty>> Arbin<T>::niveles(void) const'
-          with
-          [
-              T=int,
-              _Ty=int
-          ]
-  c:\users\majo belda\desktop\eda\problemas\0906m.cpp(56): note: vea la referencia a la creación de instancias de plantilla de función 'std::list<T,std::allocator<_Ty>> Arbin<T>::niveles(void) const' que se está compilando
-          with
-          [
-              T=int,
-              _Ty=int
-          ]
-  c:\users\majo belda\desktop\eda\problemas\0906m.cpp(55): note: vea la referencia a la creación de instancias de plantilla de clase 'Arbin<int>' que se está compilando
+c:\users\majo belda\desktop\eda\problemas\0906m.cpp(56): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
+  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.exe
+  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.pdb (Partial PDB)
