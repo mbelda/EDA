@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Arbin.h" />
+    <ClInclude Include="Hash.h" />
+    <ClInclude Include="HashMap.h" />
+    <ClInclude Include="TreeMap.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="0906M.cpp" />
+    <ClCompile Include="1003I.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2B7F6EF8-383C-49D2-83D6-EDFD19B74DAC}</ProjectGuid>

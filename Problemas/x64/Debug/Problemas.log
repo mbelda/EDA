@@ -1,4 +1,2 @@
-﻿  0906M.cpp
-c:\users\majo belda\desktop\eda\problemas\0906m.cpp(56): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
-  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.exe
-  Problemas.vcxproj -> C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.pdb (Partial PDB)
+﻿  1003I.cpp
+LINK : fatal error LNK1168: no se puede abrir C:\Users\Majo Belda\Desktop\EDA\Problemas\x64\Debug\Problemas.exe para escritura
