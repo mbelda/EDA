@@ -211,7 +211,7 @@ bool resolverCaso(){
 		else if (nombreOp == "siguientePaciente") {
 			cin >> nombreMedico;
 			try {
-				cout << "Siguiente paciente doctor " <<nombreMedico<< '\n';
+				cout << "Siguiente Paciente doctor " <<nombreMedico<< '\n';
 				cout << c.siguientePaciente(nombreMedico) << '\n';
 				cout << "---" << endl;
 			}
