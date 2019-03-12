@@ -1,2 +1,2 @@
 # EDA
-Estructuras de datos y algoritmos
+Problemas de la asignatura Estructuras de datos y algoritmos
